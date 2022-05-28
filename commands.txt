@@ -1,0 +1,22 @@
+BASIC COMMANDS TO COMMIT AND PUSH YOUR CHANGES
+git status  # it shows you all the changes in red
+
+git add .   # add all the changes in the current branch
+
+git commit -m "write your commit message here"      # commits all the added changes
+
+git push remotename branchname      # pushes all unpushed commits to the specified remote and branch.
+example: git push origin main
+
+COMMANDS TO REMOTE A COMMIT FROM LOCAL/REMOTE/BOTH
+Be careful that this will create an "alternate reality" for people 
+who have already fetch/pulled/cloned from the remote repository. 
+But in fact, it's quite simple:
+
+git reset HEAD^ # remove commit locally
+git push origin +HEAD # force-push the new HEAD commit
+
+If you want to still have it in your local repository and 
+only remove it from the remote, then you can use:
+
+git push origin +HEAD^:<name of your branch, most likely 'master'>
